@@ -1,4 +1,4 @@
-[Image](./Endo-Care-Sfondo-Trasparente.png)
+![Image](./Endo-Care-Sfondo-Trasparente.png)
 
 # EndoStats
 _Raccontare in breve l'app_
