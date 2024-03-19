@@ -1,0 +1,54 @@
+@use '@angular/material' as mat;
+@import "../../styles.scss";
+
+:host {
+  --content-padding: 10px;
+}
+
+.button {
+  background-color: $primary-color;
+}
+
+.align-right {
+  flex: 1 1 auto;
+  text-align: right;
+}
+
+.container {
+  height: 100%;
+}
+
+.content {
+  padding: var(--content-padding);
+}
+
+.bar {
+  background-color: $primary-color;
+}
+
+.data-caricamento,
+.icon {
+  color: $accent-color;
+}
+
+.logo-image {
+  width: 100%;
+  height: 100%;
+}
+
+.sidenav {
+  border: 1px;
+  color: $accent-color;
+  height: 100%;
+  position: absolute;
+}
+
+.sidenav-menu-option {
+  font-size: 16px;
+}
+
+.title {
+  color: $accent-color;
+  font-size: 20px;
+  text-decoration: none;
+}

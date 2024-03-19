@@ -1,0 +1,33 @@
+<div class="mat-elevation-z8">
+    <mat-table [dataSource]="dataSource" matSort>
+        <ng-container matColumnDef="nome">
+            <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordina per nome"> Nome </mat-header-cell>
+            <mat-cell *matCellDef="let riga"> {{riga.nome}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="cognome">
+            <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordina per cognome"> Cognome </mat-header-cell>
+            <mat-cell *matCellDef="let riga"> {{riga.cognome}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+            <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordina per email"> Email </mat-header-cell>
+            <mat-cell *matCellDef="let riga"> {{riga.email}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="dataInserimento">
+            <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordina per data di inserimento"> Data di inserimento </mat-header-cell>
+            <mat-cell *matCellDef="let riga"> {{riga.dataInserimento}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="dataDiNascita">
+            <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordina per data di nascita"> Data di nascita </mat-header-cell>
+            <mat-cell *matCellDef="let riga"> {{riga.dataDiNascita}} </mat-cell>
+        </ng-container>
+        
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons>
+    </mat-paginator>
+</div>
