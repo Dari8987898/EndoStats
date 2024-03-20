@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 
-import { GmTableComponent } from './tables/gmtable.component';
+import { GmTableComponent } from './tables/gruppo-multidisciplinare/gmtable.component';
 import { HomeComponent } from './home/home.component';
 
 const routeConfig: Routes = [

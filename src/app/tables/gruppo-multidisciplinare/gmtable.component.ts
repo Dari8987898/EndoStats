@@ -3,9 +3,10 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule, MatSort } from '@angular/material/sort';
 import { MatTableModule, MatTableDataSource } from '@angular/material/table'
 
-import { Riga } from '../interfaces/riga';
-import { MainService } from '../main.service';
+import { Riga } from '../../interfaces/riga';
+import { MainService } from '../../main.service';
 import { ActivatedRoute } from '@angular/router';
+import { ToolbarComponent } from '../../toolbar/toolbar.component';
 
 @Component({
   selector: 'gm-table',
@@ -21,7 +22,7 @@ import { ActivatedRoute } from '@angular/router';
 export class GmTableComponent implements OnInit {
   route: ActivatedRoute = inject(ActivatedRoute);
   readonly idTabella: number = 1;
-  displayedColumns: string[] = ['nome', 'cognome', 'email', 'dataInserimento', 'dataDiNascita'];
+  displayedColumns: string[] = ['row', 'nome', 'cognome', 'email', 'dataInserimento', 'dataDiNascita'];
   dataSource!: MatTableDataSource<Riga>;
 
   @ViewChild(MatPaginator)
@@ -30,9 +31,9 @@ export class GmTableComponent implements OnInit {
   @ViewChild(MatSort)
   sort!: MatSort;
 
-  constructor(
-    private service: MainService
-  ) {}
+  constructor(private service: MainService) {
+    ToolbarComponent.currentPage = "Gruppi multidisciplinari";
+  }
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource<Riga>(this.service.getTabella(this.idTabella));

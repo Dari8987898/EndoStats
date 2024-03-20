@@ -5,10 +5,9 @@ import { MatIcon } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
 
 import { MainService } from '../main.service';
-
 
 @Component({
   selector: 'toolbar',
@@ -20,12 +19,16 @@ import { MainService } from '../main.service';
     MatMenuModule,
     MatToolbarModule,
     MatTooltipModule,
-    RouterModule
+    RouterLink,
+    RouterOutlet
   ],
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.scss'],
 })
 export class ToolbarComponent {
+  public static currentPage: string = "";
+
+  route: ActivatedRoute = inject(ActivatedRoute);
   mainService: MainService = inject(MainService);
 
   file: any;
@@ -37,6 +40,14 @@ export class ToolbarComponent {
       this.dataUltimoCaricamento = localStorage.getItem("DataUltimoCaricamento");
     else
       this.dataUltimoCaricamento = null;
+  }
+
+  get staticCurrentPage(): string {
+    return ToolbarComponent.currentPage;
+  }
+
+  set currentPage(currentPage: string) {
+    ToolbarComponent.currentPage = currentPage;
   }
 
   fileChanged(event: any) {

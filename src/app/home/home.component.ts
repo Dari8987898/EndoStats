@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ToolbarComponent } from '../toolbar/toolbar.component';
 
 @Component({
   selector: 'app-home',
@@ -8,5 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-
+  constructor() {
+    ToolbarComponent.currentPage = "Home page";
+  }
 }

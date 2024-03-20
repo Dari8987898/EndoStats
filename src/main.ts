@@ -1,9 +1,9 @@
 import { bootstrapApplication } from '@angular/platform-browser';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideRouter } from '@angular/router';
-import routeConfig from './app/routes';
 
 import { AppComponent } from './app/app.component';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import routeConfig from './app/routes';
 
 bootstrapApplication(
   AppComponent,

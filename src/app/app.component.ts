@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 import { ToolbarComponent } from './toolbar/toolbar.component';
 
@@ -7,7 +7,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
   selector: 'app-root',
   standalone: true,
   imports: [
-    CommonModule,
+    RouterModule,
     ToolbarComponent
   ],
   templateUrl: './app.component.html',

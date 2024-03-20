@@ -10,22 +10,19 @@ This app is not meant to alter the data inside the excell but only to visualize 
 
 There are 3 different tables:
 - #### Gruppo multidisciplinare (G)
-This table has to show:
-|Nome|Cognome|Data ins.|Diagnosi|
-|:------:|:------:|:----:|:-------:|
-|`string`|`string`|`Date`|`boolean`|
+|Riga|Nome|Cognome|Data ins.|Diagnosi|
+|:------:|:------:|:------:|:----:|:-------:|
+|`number`|`string`|`string`|`string`|`string`|
 
 - #### Ambulatorio (A)
-This table has to show:
-|Nome|Cognome|Data ins.|Diagnosi|N° tel.|
-|:------:|:------:|:----:|:-------:|:------:|
-|`string`|`string`|`Date`|`boolean`|`string`|
+|Riga|Nome|Cognome|Data ins.|Diagnosi|N° tel.|
+|:------:|:------:|:------:|:----:|:-------:|:------:|
+|`number`|`string`|`string`|`string`|`string`|`string`|
 
 - #### Da valutare (?)
-This table has to show:
-|Nome|Cognome|Data ins.|Diagnosi|
-|:------:|:------:|:----:|:-------:|
-|`string`|`string`|`Date`|`boolean`|
+|Riga|Nome|Cognome|Data ins.|Diagnosi|
+|:------:|:------:|:------:|:----:|:-------:|
+|`number`|`string`|`string`|`string`|`string`|
 
 </br>
 
