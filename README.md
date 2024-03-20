@@ -49,6 +49,7 @@ If you find this repo of some use feel free to fork!
 </br></br>
 
 ### To do
-- Create home
+- Create home page
+- Create detail page
 - Change datasource aquisition method (from .csv to .xlsx files)
-- Create remaining tables
+- Create remaining tables' page
