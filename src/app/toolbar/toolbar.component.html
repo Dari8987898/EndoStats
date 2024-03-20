@@ -9,10 +9,11 @@
         <button mat-menu-item [routerLink]="['/da-decidere-table']">(?)</button>
     </mat-menu>
 
-    <!-- <img class="logo-image" src="../../assets/images/MarchioCompleto.png" class="logo"> -->
     <a [routerLink]="['/']" class="title">EndoStats</a>
 
-    <span class="current-page-text">{{this.staticCurrentPage}}</span>
+    <span class="current-page-text">
+        <mat-icon class="icon">{{this.staticCurrentPageIcon}}</mat-icon>
+    </span>
 
     <span class="align-right">
         <button mat-icon-button type="button" (click)="fileInput.click()" matTooltip="Carica file" class="button">

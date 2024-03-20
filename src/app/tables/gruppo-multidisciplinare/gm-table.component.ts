@@ -32,7 +32,7 @@ export class GmTableComponent implements OnInit {
   sort!: MatSort;
 
   constructor(private service: MainService) {
-    ToolbarComponent.currentPage = "Gruppi multidisciplinari";
+    ToolbarComponent.staticCurrentPageIcon = "groups_3";
   }
 
   ngOnInit(): void {

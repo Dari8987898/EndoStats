@@ -10,6 +10,6 @@ import { ToolbarComponent } from '../toolbar/toolbar.component';
 })
 export class HomeComponent {
   constructor() {
-    ToolbarComponent.currentPage = "Home page";
+    ToolbarComponent.staticCurrentPageIcon = "home";
   }
 }

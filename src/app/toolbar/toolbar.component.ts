@@ -26,7 +26,7 @@ import { MainService } from '../main.service';
   styleUrls: ['./toolbar.component.scss'],
 })
 export class ToolbarComponent {
-  public static currentPage: string = "";
+  public static staticCurrentPageIcon: string = "";
 
   route: ActivatedRoute = inject(ActivatedRoute);
   mainService: MainService = inject(MainService);
@@ -42,12 +42,12 @@ export class ToolbarComponent {
       this.dataUltimoCaricamento = null;
   }
 
-  get staticCurrentPage(): string {
-    return ToolbarComponent.currentPage;
+  get staticCurrentPageIcon(): string {
+    return ToolbarComponent.staticCurrentPageIcon;
   }
 
-  set currentPage(currentPage: string) {
-    ToolbarComponent.currentPage = currentPage;
+  set currentPageIcon(currentPageIcon: string) {
+    ToolbarComponent.staticCurrentPageIcon = currentPageIcon;
   }
 
   fileChanged(event: any) {

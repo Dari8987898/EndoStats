@@ -33,7 +33,7 @@ export class DaDecidereTableComponent implements OnInit {
   sort!: MatSort;
 
   constructor(private service: MainService) {
-    ToolbarComponent.currentPage = "(?)";
+    ToolbarComponent.staticCurrentPageIcon = "live_help";
   }
 
   ngOnInit(): void {

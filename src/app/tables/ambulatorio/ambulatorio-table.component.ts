@@ -33,7 +33,7 @@ export class AmbulatorioTableComponent implements OnInit {
   sort!: MatSort;
 
   constructor(private service: MainService) {
-    ToolbarComponent.currentPage = "Ambulatorio";
+    ToolbarComponent.staticCurrentPageIcon = "local_hospital";
   }
 
   ngOnInit(): void {
