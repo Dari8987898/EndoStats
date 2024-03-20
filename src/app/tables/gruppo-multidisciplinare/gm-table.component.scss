@@ -1,0 +1,21 @@
+div {
+    padding: auto;
+    margin: auto;
+    margin-top: 2%;
+    width: 90%;
+}
+
+.mat-column-row {
+    flex: 0 1 10%;
+}
+
+.mat-column-nome,
+.mat-column-cognome {
+    flex: 0 1 15%;
+}
+
+.mat-column-email,
+.mat-column-dataInserimento,
+.mat-column-dataDiNascita {
+    flex: 0 1 20%;
+}

@@ -1,7 +1,9 @@
 import { Routes } from '@angular/router';
 
-import { GmTableComponent } from './tables/gruppo-multidisciplinare/gmtable.component';
+import { GmTableComponent } from './tables/gruppo-multidisciplinare/gm-table.component';
 import { HomeComponent } from './home/home.component';
+import { DaDecidereTableComponent } from './tables/da-decidere/da-decidere-table.component';
+import { AmbulatorioTableComponent } from './tables/ambulatorio/ambulatorio-table.component';
 
 const routeConfig: Routes = [
     {
@@ -10,9 +12,19 @@ const routeConfig: Routes = [
       title: 'Home page'
     },
     {
-      path: 'gmtable',
+      path: 'gm-table',
       component: GmTableComponent,
       title: 'Gruppi multidisciplinari'
+    },
+    {
+      path: 'ambulatorio-table',
+      component: AmbulatorioTableComponent,
+      title: 'Ambulatorio'
+    },
+    {
+      path: 'da-decidere-table',
+      component: DaDecidereTableComponent,
+      title: '(?)'
     }
   ];
   

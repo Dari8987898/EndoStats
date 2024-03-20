@@ -2,26 +2,27 @@ import { Component, OnInit, ViewChild, inject } from '@angular/core';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule, MatSort } from '@angular/material/sort';
 import { MatTableModule, MatTableDataSource } from '@angular/material/table'
+import { ActivatedRoute } from '@angular/router';
 
 import { Riga } from '../../interfaces/riga';
 import { MainService } from '../../main.service';
-import { ActivatedRoute } from '@angular/router';
 import { ToolbarComponent } from '../../toolbar/toolbar.component';
 
 @Component({
-  selector: 'gm-table',
+  selector: 'da-decidere-table',
   standalone: true,
   imports: [
     MatPaginatorModule,
     MatSortModule,
     MatTableModule
   ],
-  templateUrl: './gmtable.component.html',
-  styleUrl: './gmtable.component.scss'
+  templateUrl: './da-decidere-table.component.html',
+  styleUrl: './da-decidere-table.component.scss'
 })
-export class GmTableComponent implements OnInit {
+export class DaDecidereTableComponent implements OnInit {
+  readonly idTabella: number = 2;
+
   route: ActivatedRoute = inject(ActivatedRoute);
-  readonly idTabella: number = 1;
   displayedColumns: string[] = ['row', 'nome', 'cognome', 'email', 'dataInserimento', 'dataDiNascita'];
   dataSource!: MatTableDataSource<Riga>;
 
@@ -32,7 +33,7 @@ export class GmTableComponent implements OnInit {
   sort!: MatSort;
 
   constructor(private service: MainService) {
-    ToolbarComponent.currentPage = "Gruppi multidisciplinari";
+    ToolbarComponent.currentPage = "(?)";
   }
 
   ngOnInit(): void {
