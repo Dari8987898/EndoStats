@@ -48,3 +48,4 @@ If you find this repo of some use feel free to fork!
 ### To do
 - Create detail page
 - Change datasource aquisition method (from .csv to .xlsx files)
+- When using localstorage, parse all strings in JSON format
