@@ -6,7 +6,6 @@ import { ActivatedRoute } from '@angular/router';
 
 import { Riga } from '../../interfaces/riga';
 import { MainService } from '../../main.service';
-import { ToolbarComponent } from '../../toolbar/toolbar.component';
 
 @Component({
   selector: 'da-decidere-table',
