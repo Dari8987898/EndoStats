@@ -31,9 +31,7 @@ export class GmTableComponent implements OnInit {
   @ViewChild(MatSort)
   sort!: MatSort;
 
-  constructor(private service: MainService) {
-    ToolbarComponent.staticCurrentPageIcon = "groups_3";
-  }
+  constructor(private service: MainService) {}
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource<Riga>(this.service.getTabella(this.idTabella));

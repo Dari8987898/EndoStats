@@ -1,8 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
-import { MatIcon } from '@angular/material/icon';
-import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
@@ -15,8 +14,7 @@ import { MainService } from '../main.service';
   imports: [
     CommonModule,
     MatButtonModule,
-    MatIcon,
-    MatMenuModule,
+    MatIconModule,
     MatToolbarModule,
     MatTooltipModule,
     RouterLink,
@@ -27,13 +25,14 @@ import { MainService } from '../main.service';
 })
 export class ToolbarComponent {
   public static staticCurrentPageIcon: string = "";
-
+  
   route: ActivatedRoute = inject(ActivatedRoute);
   mainService: MainService = inject(MainService);
 
   file: any;
   dataUltimoCaricamento: string | null;
   sidenavOpened!: boolean;
+  tabIndex: number = 0;
 
   constructor() {
     if(localStorage.getItem("DataUltimoCaricamento") != null) 
@@ -60,5 +59,10 @@ export class ToolbarComponent {
     }
     
     fileReader.readAsText(this.file);
+  }
+
+  
+  onTabClick(index: number): void {
+      this.tabIndex = index;
   }
 }

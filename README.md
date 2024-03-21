@@ -46,6 +46,5 @@ If you find this repo of some use feel free to fork!
 </br></br>
 
 ### To do
-- Put buttons in the toolbar to change page instead of the menu (change stile of selected button)
 - Create detail page
 - Change datasource aquisition method (from .csv to .xlsx files)

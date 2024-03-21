@@ -32,9 +32,7 @@ export class AmbulatorioTableComponent implements OnInit {
   @ViewChild(MatSort)
   sort!: MatSort;
 
-  constructor(private service: MainService) {
-    ToolbarComponent.staticCurrentPageIcon = "local_hospital";
-  }
+  constructor(private service: MainService) {}
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource<Riga>(this.service.getTabella(this.idTabella));
