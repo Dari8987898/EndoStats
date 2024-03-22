@@ -1,8 +1,8 @@
 <div class="mat-elevation-z8">
     <mat-table [dataSource]="dataSource" matSort>
-        <ng-container matColumnDef="nRiga">
-            <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordina per riga"> Riga n° </mat-header-cell>
-            <mat-cell *matCellDef="let riga"> {{riga.nRiga}} </mat-cell>
+        <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordina per riga"> ID </mat-header-cell>
+            <mat-cell *matCellDef="let riga"> {{riga.id}} </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="nome">
@@ -15,25 +15,20 @@
             <mat-cell *matCellDef="let riga"> {{riga.cognome}} </mat-cell>
         </ng-container>
 
-        <ng-container matColumnDef="email">
-            <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordina per email"> Email </mat-header-cell>
-            <mat-cell *matCellDef="let riga"> {{riga.email}} </mat-cell>
-        </ng-container>
-
-        <ng-container matColumnDef="dataInserimento">
+        <ng-container matColumnDef="data_ins">
             <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordina per data di inserimento"> Data di inserimento </mat-header-cell>
-            <mat-cell *matCellDef="let riga"> {{riga.dataInserimento}} </mat-cell>
+            <mat-cell *matCellDef="let riga"> {{riga.data_ins}} </mat-cell>
         </ng-container>
 
-        <ng-container matColumnDef="luogoDiNascita">
-            <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordina per luogo di nascita"> Luogo di nascita </mat-header-cell>
-            <mat-cell *matCellDef="let riga"> {{riga.luogoDiNascita}} </mat-cell>
+        <ng-container matColumnDef="diagnosi">
+            <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordina per diagnosi"> Diagnosi </mat-header-cell>
+            <mat-cell *matCellDef="let riga"> {{riga.diagnosi}} </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="openDettaglio">
             <mat-header-cell *matHeaderCellDef></mat-header-cell>
             <mat-cell *matCellDef="let riga;">
-                <button mat-icon-button matTooltip="Apri dettaglio" [routerLink]="['/gm-detail', riga.nRiga]">
+                <button mat-icon-button matTooltip="Apri dettaglio" [routerLink]="['/gm-detail', riga.id]">
                     <mat-icon mat-icon>description</mat-icon>        
                 </button>
             </mat-cell>
@@ -42,6 +37,6 @@
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
         <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
     </mat-table>
-    <mat-paginator [pageSizeOptions]="[5, 10, 15, 20]" showFirstLastButtons>
+    <mat-paginator [pageSizeOptions]="[10, 5, 15, 20]" showFirstLastButtons>
     </mat-paginator>
 </div>

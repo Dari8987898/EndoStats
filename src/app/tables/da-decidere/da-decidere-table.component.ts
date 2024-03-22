@@ -4,7 +4,8 @@ import { MatSortModule, MatSort } from '@angular/material/sort';
 import { MatTableModule, MatTableDataSource } from '@angular/material/table'
 import { ActivatedRoute } from '@angular/router';
 
-import { Riga } from '../../interfaces/riga';
+import { DaDecidereTableColumns } from '../../interfaces/da-decidere-table.interface';
+import { GenericTableInterface } from '../../interfaces/generic-table.interface';
 import { MainService } from '../../main.service';
 import { ToolbarComponent } from '../../toolbar/toolbar.component';
 
@@ -23,8 +24,8 @@ export class DaDecidereTableComponent implements OnInit {
   readonly idTabella: number = 2;
 
   route: ActivatedRoute = inject(ActivatedRoute);
-  displayedColumns: string[] = ['row', 'nome', 'cognome', 'email', 'dataInserimento', 'dataDiNascita'];
-  dataSource!: MatTableDataSource<Riga>;
+  displayedColumns: string[] = DaDecidereTableColumns;
+  dataSource!: MatTableDataSource<GenericTableInterface>;
 
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
@@ -37,7 +38,7 @@ export class DaDecidereTableComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.dataSource = new MatTableDataSource<Riga>(this.service.getTable(this.idTabella));
+    this.dataSource = new MatTableDataSource<GenericTableInterface>(this.service.getTable(this.idTabella));
   }
 
   ngAfterViewInit() {

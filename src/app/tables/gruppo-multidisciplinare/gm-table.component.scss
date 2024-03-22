@@ -5,8 +5,11 @@ div {
     width: 90%;
 }
 
-.mat-column-openDettaglio,
-.mat-column-nRiga {
+.mat-column-id {
+    flex: 0 1 5%;
+}
+
+.mat-column-openDettaglio {
     flex: 0 1 10%;
 }
 
@@ -15,8 +18,4 @@ div {
 .mat-column-luogoDiNascita,
 .mat-column-nome {
     flex: 0 1 15%;
-}
-
-.mat-column-email {
-    flex: 0 1 20%;
 }

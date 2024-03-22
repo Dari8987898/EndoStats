@@ -1,14 +1,51 @@
 import { Injectable } from '@angular/core';
 
-import { Riga } from './interfaces/riga';
+import { GmTableInterface } from './interfaces/gm-table.interface';
+import { GenericTableInterface } from './interfaces/generic-table.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MainService {
-  dati: Riga[];
+  dati: GenericTableInterface[] = [];
 
   constructor() {
+    this.formatData();
+  }
+  
+  public getTable(id: number): GenericTableInterface[] {
+    switch(id) {
+      case 1:
+        return this.getGmTableData();
+
+      case 2:
+        return this.getAmbulatorioTableData();
+
+      case 3:
+        return this.getDaDecidereTableData();
+
+      default:
+        return [];
+    }
+  }
+
+  public getDetail() {
+    
+  }
+
+  private getGmTableData() {
+    return this.dati;
+  }
+
+  private getAmbulatorioTableData() {
+    return this.dati;
+  }
+
+  private getDaDecidereTableData() {
+    return this.dati;
+  }
+
+  private formatData(): void {
     this.dati = [];
 
     let datiDaCsv: string | null = localStorage.getItem("Dati");
@@ -25,13 +62,11 @@ export class MainService {
 
         for (let j = 0; j < colonne.length; j++) {
           this.dati[i] = {
-            nRiga: i,
-            disc: colonne[0],
-            dataInserimento: colonne[1],
-            email: colonne[2],
-            nome: colonne[3],
-            cognome: colonne[4],
-            luogoDiNascita: colonne[5]
+            id: i, //colonne[0],
+            nome: colonne[1],
+            cognome: colonne[2],
+            data_ins: colonne[3],
+            diagnosi: colonne[4]
           }
         }
       }
@@ -39,25 +74,5 @@ export class MainService {
     } else {
       console.log("datiDaCsv == null");
     }
-  }
-  
-  getTable(id: number): Riga[] {
-    switch(id) {
-      case 1:
-        return this.dati;
-
-      case 2:
-        return [];
-
-      case 3:
-        return [];
-
-      default:
-        return [];
-    }
-  }
-
-  getDetail() {
-    
   }
 }
