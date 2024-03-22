@@ -25,7 +25,7 @@ export class MainService {
 
         for (let j = 0; j < colonne.length; j++) {
           this.dati[i] = {
-            nRiga: i+1,
+            nRiga: i,
             disc: colonne[0],
             dataInserimento: colonne[1],
             email: colonne[2],
@@ -41,7 +41,7 @@ export class MainService {
     }
   }
   
-  getTabella(id: number): Riga[] {
+  getTable(id: number): Riga[] {
     switch(id) {
       case 1:
         return this.dati;
@@ -55,5 +55,9 @@ export class MainService {
       default:
         return [];
     }
+  }
+
+  getDetail() {
+    
   }
 }

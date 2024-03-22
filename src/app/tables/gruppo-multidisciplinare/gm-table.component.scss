@@ -5,17 +5,18 @@ div {
     width: 90%;
 }
 
-.mat-column-row {
+.mat-column-openDettaglio,
+.mat-column-nRiga {
     flex: 0 1 10%;
 }
 
-.mat-column-nome,
-.mat-column-cognome {
+.mat-column-cognome,
+.mat-column-dataInserimento,
+.mat-column-luogoDiNascita,
+.mat-column-nome {
     flex: 0 1 15%;
 }
 
-.mat-column-email,
-.mat-column-dataInserimento,
-.mat-column-dataDiNascita {
+.mat-column-email {
     flex: 0 1 20%;
 }

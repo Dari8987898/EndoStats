@@ -1,8 +1,11 @@
 import { Component, OnInit, ViewChild, inject } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule, MatSort } from '@angular/material/sort';
 import { MatTableModule, MatTableDataSource } from '@angular/material/table'
-import { ActivatedRoute } from '@angular/router';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 
 import { Riga } from '../../interfaces/riga';
 import { MainService } from '../../main.service';
@@ -12,9 +15,13 @@ import { ToolbarComponent } from '../../toolbar/toolbar.component';
   selector: 'gm-table',
   standalone: true,
   imports: [
+    MatButtonModule,
+    MatIconModule,
     MatPaginatorModule,
     MatSortModule,
-    MatTableModule
+    MatTableModule,
+    MatTooltipModule,
+    RouterLink
   ],
   templateUrl: './gm-table.component.html',
   styleUrl: './gm-table.component.scss'
@@ -22,7 +29,7 @@ import { ToolbarComponent } from '../../toolbar/toolbar.component';
 export class GmTableComponent implements OnInit {
   route: ActivatedRoute = inject(ActivatedRoute);
   readonly idTabella: number = 1;
-  displayedColumns: string[] = ['row', 'nome', 'cognome', 'email', 'dataInserimento', 'dataDiNascita'];
+  displayedColumns: string[] = ['nRiga', 'nome', 'cognome', 'email', 'dataInserimento', 'luogoDiNascita', 'openDettaglio'];
   dataSource!: MatTableDataSource<Riga>;
 
   @ViewChild(MatPaginator)
@@ -36,7 +43,7 @@ export class GmTableComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.dataSource = new MatTableDataSource<Riga>(this.service.getTabella(this.idTabella));
+    this.dataSource = new MatTableDataSource<Riga>(this.service.getTable(this.idTabella));
   }
 
   ngAfterViewInit() {

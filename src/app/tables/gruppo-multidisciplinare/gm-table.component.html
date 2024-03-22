@@ -1,6 +1,6 @@
 <div class="mat-elevation-z8">
     <mat-table [dataSource]="dataSource" matSort>
-        <ng-container matColumnDef="row">
+        <ng-container matColumnDef="nRiga">
             <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordina per riga"> Riga n° </mat-header-cell>
             <mat-cell *matCellDef="let riga"> {{riga.nRiga}} </mat-cell>
         </ng-container>
@@ -25,14 +25,23 @@
             <mat-cell *matCellDef="let riga"> {{riga.dataInserimento}} </mat-cell>
         </ng-container>
 
-        <ng-container matColumnDef="dataDiNascita">
-            <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordina per data di nascita"> Data di nascita </mat-header-cell>
-            <mat-cell *matCellDef="let riga"> {{riga.dataDiNascita}} </mat-cell>
+        <ng-container matColumnDef="luogoDiNascita">
+            <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordina per luogo di nascita"> Luogo di nascita </mat-header-cell>
+            <mat-cell *matCellDef="let riga"> {{riga.luogoDiNascita}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="openDettaglio">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let riga;">
+                <button mat-icon-button matTooltip="Apri dettaglio" [routerLink]="['/gm-detail', riga.nRiga]">
+                    <mat-icon mat-icon>description</mat-icon>        
+                </button>
+            </mat-cell>
         </ng-container>
         
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
         <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
     </mat-table>
-    <mat-paginator [pageSizeOptions]="[10, 15, 20]" showFirstLastButtons>
+    <mat-paginator [pageSizeOptions]="[5, 10, 15, 20]" showFirstLastButtons>
     </mat-paginator>
 </div>

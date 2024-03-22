@@ -37,7 +37,7 @@ export class DaDecidereTableComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.dataSource = new MatTableDataSource<Riga>(this.service.getTabella(this.idTabella));
+    this.dataSource = new MatTableDataSource<Riga>(this.service.getTable(this.idTabella));
   }
 
   ngAfterViewInit() {
