@@ -2,7 +2,7 @@
     <mat-table [dataSource]="dataSource" matSort>
         <ng-container matColumnDef="row">
             <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordina per riga"> Riga n° </mat-header-cell>
-            <mat-cell *matCellDef="let riga"> {{riga.row}} </mat-cell>
+            <mat-cell *matCellDef="let riga"> {{riga.nRiga}} </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="nome">

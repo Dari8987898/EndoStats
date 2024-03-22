@@ -6,6 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { Riga } from '../../interfaces/riga';
 import { MainService } from '../../main.service';
+import { ToolbarComponent } from '../../toolbar/toolbar.component';
 
 @Component({
   selector: 'gm-table',
@@ -30,7 +31,9 @@ export class GmTableComponent implements OnInit {
   @ViewChild(MatSort)
   sort!: MatSort;
 
-  constructor(private service: MainService) {}
+  constructor(private service: MainService) {
+    ToolbarComponent.staticTabIndex = 1;
+  }
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource<Riga>(this.service.getTabella(this.idTabella));

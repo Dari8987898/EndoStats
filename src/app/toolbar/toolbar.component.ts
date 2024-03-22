@@ -24,7 +24,7 @@ import { MainService } from '../main.service';
   styleUrls: ['./toolbar.component.scss'],
 })
 export class ToolbarComponent {
-  public static staticCurrentPageIcon: string = "";
+  public static staticTabIndex: number = 0;
   
   route: ActivatedRoute = inject(ActivatedRoute);
   mainService: MainService = inject(MainService);
@@ -32,7 +32,6 @@ export class ToolbarComponent {
   file: any;
   dataUltimoCaricamento: string | null;
   sidenavOpened!: boolean;
-  tabIndex: number = 0;
 
   constructor() {
     if(localStorage.getItem("DataUltimoCaricamento") != null) 
@@ -41,12 +40,12 @@ export class ToolbarComponent {
       this.dataUltimoCaricamento = null;
   }
 
-  get staticCurrentPageIcon(): string {
-    return ToolbarComponent.staticCurrentPageIcon;
+  get staticTabIndex(): number {
+    return ToolbarComponent.staticTabIndex;
   }
 
-  set currentPageIcon(currentPageIcon: string) {
-    ToolbarComponent.staticCurrentPageIcon = currentPageIcon;
+  set tabIndex(tabIndex: number) {
+    ToolbarComponent.staticTabIndex = tabIndex;
   }
 
   fileChanged(event: any) {
@@ -59,6 +58,7 @@ export class ToolbarComponent {
     }
     
     fileReader.readAsText(this.file);
+    window.location.reload();
   }
 
   

@@ -13,7 +13,7 @@ export class MainService {
 
     let datiDaCsv: string | null = localStorage.getItem("Dati");
 
-    if(datiDaCsv != null) {
+    if(datiDaCsv != null && datiDaCsv != "") {
       let righe: string[] = datiDaCsv.split("\n");
       let colonne: string[] = [];
 
@@ -25,7 +25,8 @@ export class MainService {
 
         for (let j = 0; j < colonne.length; j++) {
           this.dati[i] = {
-            //colonne[0] non viene considerata poerché nell'excell ci scrivono quello che vogliono
+            nRiga: i+1,
+            disc: colonne[0],
             dataInserimento: colonne[1],
             email: colonne[2],
             nome: colonne[3],
