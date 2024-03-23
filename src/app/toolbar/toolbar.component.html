@@ -29,7 +29,7 @@
         <button mat-icon-button (click)="fileInput.click()" matTooltip="Carica file" type="button" class="button">
             <mat-icon>upload_file</mat-icon>
         </button>
-        <input hidden type="file" accept=".csv" (change)="fileChanged($event)" #fileInput>
+        <input hidden type="file" accept=".xls, .xlsx" (change)="fileChanged($event)" #fileInput>
     
         <span class="data-caricamento">
             {{this.dataUltimoCaricamento ? "Data di ultimo caricamento: " + this.dataUltimoCaricamento : "Nessun file caricato"}}

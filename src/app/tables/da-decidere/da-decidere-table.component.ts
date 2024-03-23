@@ -4,7 +4,7 @@ import { MatSortModule, MatSort } from '@angular/material/sort';
 import { MatTableModule, MatTableDataSource } from '@angular/material/table'
 import { ActivatedRoute } from '@angular/router';
 
-import { DaDecidereTableColumns } from '../../interfaces/da-decidere-table.interface';
+import { DaDecidereTableColumns, DaDecidereTableInterface } from '../../interfaces/da-decidere-table.interface';
 import { GenericTableInterface } from '../../interfaces/generic-table.interface';
 import { MainService } from '../../main.service';
 import { ToolbarComponent } from '../../toolbar/toolbar.component';
@@ -38,7 +38,7 @@ export class DaDecidereTableComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.dataSource = new MatTableDataSource<GenericTableInterface>(this.service.getTable(this.idTabella));
+    this.dataSource = new MatTableDataSource<DaDecidereTableInterface>(this.service.getTable(this.idTabella));
   }
 
   ngAfterViewInit() {

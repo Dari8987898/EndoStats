@@ -7,7 +7,7 @@ import { MatTableModule, MatTableDataSource } from '@angular/material/table'
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 
-import { GmTableColumns } from '../../interfaces/gm-table.interface';
+import { GmTableColumns, GmTableInterface } from '../../interfaces/gm-table.interface';
 import { GenericTableInterface } from '../../interfaces/generic-table.interface';
 import { MainService } from '../../main.service';
 import { ToolbarComponent } from '../../toolbar/toolbar.component';
@@ -44,7 +44,7 @@ export class GmTableComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.dataSource = new MatTableDataSource<GenericTableInterface>(this.service.getTable(this.idTabella));
+    this.dataSource = new MatTableDataSource<GmTableInterface>(this.service.getTable(this.idTabella));
   }
 
   ngAfterViewInit() {

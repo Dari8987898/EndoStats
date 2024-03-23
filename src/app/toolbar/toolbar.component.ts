@@ -29,7 +29,7 @@ export class ToolbarComponent {
   route: ActivatedRoute = inject(ActivatedRoute);
   mainService: MainService = inject(MainService);
 
-  file: any;
+  file: Blob = new Blob();
   dataUltimoCaricamento: string | null;
   sidenavOpened!: boolean;
 
@@ -53,12 +53,11 @@ export class ToolbarComponent {
     let fileReader = new FileReader();
 
     fileReader.onload = () => {
-      localStorage.setItem("Dati", fileReader.result + "");
-      localStorage.setItem("DataUltimoCaricamento", new Date().toLocaleDateString())
+      this.mainService.uploadData(fileReader.result);
     }
     
-    fileReader.readAsText(this.file);
-    window.location.reload();
+    fileReader.readAsArrayBuffer(this.file)
+    //window.location.reload();
   }
 
   

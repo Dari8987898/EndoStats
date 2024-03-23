@@ -1,7 +1,7 @@
 import { GenericTableColumns, GenericTableInterface } from "./generic-table.interface";
 
 export interface AmbulatorioTableInterface extends GenericTableInterface {
-    telefono: string;
+    numero_telefono: string;
 }
 
-export const AmbulatorioTableColumns = GenericTableColumns.concat(['telefono']);
+export const AmbulatorioTableColumns = GenericTableColumns.concat(['numero_telefono']);
