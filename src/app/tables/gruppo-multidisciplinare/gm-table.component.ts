@@ -2,13 +2,12 @@ import { Component, OnInit, ViewChild, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { MatSortModule, MatSort } from '@angular/material/sort';
 import { MatTableModule, MatTableDataSource } from '@angular/material/table'
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { ActivatedRoute, RouterLink } from '@angular/router';
 
 import { GmTableColumns, GmTableInterface } from '../../interfaces/gm-table.interface';
-import { GenericTableInterface } from '../../interfaces/generic-table.interface';
 import { MainService } from '../../main.service';
 import { ToolbarComponent } from '../../toolbar/toolbar.component';
 
@@ -30,8 +29,8 @@ import { ToolbarComponent } from '../../toolbar/toolbar.component';
 export class GmTableComponent implements OnInit {
   route: ActivatedRoute = inject(ActivatedRoute);
   readonly idTabella: number = 1;
-  displayedColumns: string[] = GmTableColumns;
-  dataSource!: MatTableDataSource<GenericTableInterface>;
+  displayedColumns: string[] = GmTableColumns.concat(['openDettaglio']);
+  dataSource!: MatTableDataSource<GmTableInterface>;
 
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;

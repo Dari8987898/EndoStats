@@ -57,9 +57,9 @@ export class ToolbarComponent {
     }
     
     fileReader.readAsArrayBuffer(this.file)
-    //window.location.reload();
+    
+    window.location.reload();
   }
-
   
   onTabClick(index: number): void {
       this.tabIndex = index;

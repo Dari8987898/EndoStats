@@ -1,11 +1,13 @@
 import { Component, OnInit, ViewChild, inject } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { MatSortModule, MatSort } from '@angular/material/sort';
 import { MatTableModule, MatTableDataSource } from '@angular/material/table'
-import { ActivatedRoute } from '@angular/router';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { AmbulatorioTableColumns, AmbulatorioTableInterface } from '../../interfaces/ambulatorio-table.interface';
-import { GenericTableInterface } from '../../interfaces/generic-table.interface';
 import { MainService } from '../../main.service';
 import { ToolbarComponent } from '../../toolbar/toolbar.component';
 
@@ -13,9 +15,13 @@ import { ToolbarComponent } from '../../toolbar/toolbar.component';
   selector: 'ambulatorio-table',
   standalone: true,
   imports: [
+    MatButtonModule,
+    MatIconModule,
     MatPaginatorModule,
     MatSortModule,
-    MatTableModule
+    MatTableModule,
+    MatTooltipModule,
+    RouterLink
   ],
   templateUrl: './ambulatorio-table.component.html',
   styleUrl: './ambulatorio-table.component.scss'
@@ -24,7 +30,7 @@ export class AmbulatorioTableComponent implements OnInit {
   readonly idTabella: number = 3;
 
   route: ActivatedRoute = inject(ActivatedRoute);
-  displayedColumns: string[] = AmbulatorioTableColumns;
+  displayedColumns: string[] = AmbulatorioTableColumns.concat(['openDettaglio']);
   dataSource!: MatTableDataSource<AmbulatorioTableInterface>;
 
   @ViewChild(MatPaginator)

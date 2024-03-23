@@ -1,8 +1,8 @@
 <div class="mat-elevation-z8">
     <mat-table [dataSource]="dataSource" matSort>
-        <ng-container matColumnDef="id">
+        <ng-container matColumnDef="row_number">
             <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordina per riga"> ID </mat-header-cell>
-            <mat-cell *matCellDef="let riga"> {{riga.id}} </mat-cell>
+            <mat-cell *matCellDef="let riga"> {{riga.row_number}} </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="nome">
@@ -28,7 +28,7 @@
         <ng-container matColumnDef="openDettaglio">
             <mat-header-cell *matHeaderCellDef></mat-header-cell>
             <mat-cell *matCellDef="let riga;">
-                <button mat-icon-button matTooltip="Apri dettaglio" [routerLink]="['/gm-detail', riga.id]">
+                <button mat-icon-button matTooltip="Apri dettaglio" [routerLink]="['/detail', riga.row_number]" class="button">
                     <mat-icon mat-icon>description</mat-icon>        
                 </button>
             </mat-cell>

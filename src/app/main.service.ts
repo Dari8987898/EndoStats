@@ -42,7 +42,7 @@ export class MainService {
       //the first row is jumped because it's the headers' row
       data.shift();
 
-      let rowNumber: number = 1;
+      let rowNumber: number = 2;
 
       let allRowsData: RigaInterface[] = [];
       let gmTableData: GmTableInterface[] = [];
@@ -211,10 +211,10 @@ export class MainService {
         return this.getGmTableDataFromLocalStorage();
 
       case 2:
-        return this.getAmbulatorioTableDataFromLocalStorage();
+        return this.getDaDecidereTableDataFromLocalStorage();
 
       case 3:
-        return this.getDaDecidereTableDataFromLocalStorage();
+        return this.getAmbulatorioTableDataFromLocalStorage();
 
       default:
         return [];

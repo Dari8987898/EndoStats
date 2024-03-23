@@ -6,4 +6,4 @@ export interface GenericTableInterface {
     diagnosi: string;
 }
 
-export const GenericTableColumns: string[] = ['id', 'nome', 'cognome', 'data_inserimento', 'diagnosi'];
+export const GenericTableColumns: string[] = ['row_number', 'nome', 'cognome', 'data_inserimento', 'diagnosi'];
