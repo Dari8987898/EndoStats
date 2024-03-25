@@ -24,8 +24,16 @@ export class MainService {
     return this.getTableData(id);
   }
 
-  public getDetail(id: number) {
-    
+  public getDetail(id: number): any {
+    if(localStorage.getItem(this.LOCALSTORAGE_ITEM_NAME_ALLROWS_TABLE_DATA) != null) {
+      let allRowsData: RigaInterface[] = JSON.parse(localStorage.getItem(this.LOCALSTORAGE_ITEM_NAME_ALLROWS_TABLE_DATA)!);
+
+      let detailData: RigaInterface = allRowsData[id-1];
+
+      return detailData;
+    }
+
+    return [];
   }
 
   public uploadData(inputFile: string | ArrayBuffer | null): void {
@@ -42,7 +50,7 @@ export class MainService {
       //the first row is jumped because it's the headers' row
       data.shift();
 
-      let rowNumber: number = 2;
+      let rowNumber: number = 1;
 
       let allRowsData: RigaInterface[] = [];
       let gmTableData: GmTableInterface[] = [];
@@ -89,33 +97,30 @@ export class MainService {
   }
 
   private getAmbulatorioTableDataFromLocalStorage(): AmbulatorioTableInterface[] {
-    if(localStorage.getItem(this.LOCALSTORAGE_ITEM_NAME_AMBULATORIO_TABLE_DATA) != null)
-    {
+    if(localStorage.getItem(this.LOCALSTORAGE_ITEM_NAME_AMBULATORIO_TABLE_DATA) != null) {
       let gmTableData: AmbulatorioTableInterface[] = JSON.parse(localStorage.getItem(this.LOCALSTORAGE_ITEM_NAME_AMBULATORIO_TABLE_DATA)!);
 
-      return gmTableData
+      return gmTableData;
     }
 
     return [];
   }
 
   private getDaDecidereTableDataFromLocalStorage(): DaDecidereTableInterface[] {
-    if(localStorage.getItem(this.LOCALSTORAGE_ITEM_NAME_DA_DECIDERE_TABLE_DATA) != null)
-    {
+    if(localStorage.getItem(this.LOCALSTORAGE_ITEM_NAME_DA_DECIDERE_TABLE_DATA) != null) {
       let gmTableData: DaDecidereTableInterface[] = JSON.parse(localStorage.getItem(this.LOCALSTORAGE_ITEM_NAME_DA_DECIDERE_TABLE_DATA)!);
 
-      return gmTableData
+      return gmTableData;
     }
 
     return [];
   }
 
   private getGmTableDataFromLocalStorage(): GmTableInterface[] {
-    if(localStorage.getItem(this.LOCALSTORAGE_ITEM_NAME_GM_TABLE_DATA) != null)
-    {
+    if(localStorage.getItem(this.LOCALSTORAGE_ITEM_NAME_GM_TABLE_DATA) != null) {
       let gmTableData: GmTableInterface[] = JSON.parse(localStorage.getItem(this.LOCALSTORAGE_ITEM_NAME_GM_TABLE_DATA)!);
 
-      return gmTableData
+      return gmTableData;
     }
 
     return [];

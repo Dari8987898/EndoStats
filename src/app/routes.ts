@@ -4,6 +4,7 @@ import { GmTableComponent } from './tables/gruppo-multidisciplinare/gm-table.com
 import { HomeComponent } from './home/home.component';
 import { DaDecidereTableComponent } from './tables/da-decidere/da-decidere-table.component';
 import { AmbulatorioTableComponent } from './tables/ambulatorio/ambulatorio-table.component';
+import { DetailComponent } from './details/detail.component';
 
 const routeConfig: Routes = [
     {
@@ -25,6 +26,11 @@ const routeConfig: Routes = [
       path: 'da-decidere-table',
       component: DaDecidereTableComponent,
       title: '(?)'
+    },
+    {
+      path: 'detail/:id',
+      component: DetailComponent,
+      title: "Dettaglio"
     }
   ];
   

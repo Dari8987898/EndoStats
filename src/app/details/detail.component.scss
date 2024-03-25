@@ -1,0 +1,15 @@
+@import "../../styles.scss";
+
+.mat-elevation-z8 {
+    padding: auto;
+    margin: auto;
+    margin-top: 2%;
+    width: 70%;
+}
+
+.data-ins,
+.title {
+    flex: 0 1 50px;
+    font-size: 20px;
+    color: $primary-color;
+}

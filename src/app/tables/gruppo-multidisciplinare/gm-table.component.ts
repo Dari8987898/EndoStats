@@ -27,8 +27,9 @@ import { ToolbarComponent } from '../../toolbar/toolbar.component';
   styleUrl: './gm-table.component.scss'
 })
 export class GmTableComponent implements OnInit {
-  route: ActivatedRoute = inject(ActivatedRoute);
   readonly idTabella: number = 1;
+  
+  route: ActivatedRoute = inject(ActivatedRoute);
   displayedColumns: string[] = GmTableColumns.concat(['openDettaglio']);
   dataSource!: MatTableDataSource<GmTableInterface>;
 
