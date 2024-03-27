@@ -5,12 +5,14 @@ import { ActivatedRoute } from "@angular/router";
 import { RigaInterface } from "../interfaces/riga.interface";
 import { MainService } from "../main.service";
 import { ToolbarComponent } from "../toolbar/toolbar.component";
+import { MatIconModule } from "@angular/material/icon";
 
 @Component({
     selector: 'detail',
     standalone: true,
     imports: [
-        MatCardModule
+        MatCardModule,
+        MatIconModule
     ],
     templateUrl: './detail.component.html',
     styleUrl: './detail.component.scss'
