@@ -28,7 +28,8 @@ export class MainService {
     if(localStorage.getItem(this.LOCALSTORAGE_ITEM_NAME_ALLROWS_TABLE_DATA) != null) {
       let allRowsData: RigaInterface[] = JSON.parse(localStorage.getItem(this.LOCALSTORAGE_ITEM_NAME_ALLROWS_TABLE_DATA)!);
 
-      let detailData: RigaInterface = allRowsData[id-1];
+      //allRowsData[0] contains rowNumber 2, so if id==2 (first row with data) is the first element of the array
+      let detailData: RigaInterface = allRowsData[id-2];
 
       return detailData;
     }
