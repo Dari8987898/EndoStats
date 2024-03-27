@@ -1,9 +1,26 @@
 <div class="mat-elevation-z8">
     <mat-card>
         <mat-card-content>
-            <div>
-                <div class="title">{{dataSource.row_number}} - {{dataSource.nome}} {{dataSource.cognome}}</div>
-                <div class="data-ins">{{dataSource.data_inserimento}}</div>
+            <div class="title-row">
+                <h3 class="title">{{dataSource.row_number}} - {{dataSource.nome}} {{dataSource.cognome}}</h3>
+                <h3 class="title">{{dataSource.data_inserimento}}</h3>
+            </div>
+            <div class="info-row">
+                <div class="contatti">
+                    <h4 class="title">Contatti</h4>
+                    <div class="contatto-row">
+                        <span>{{dataSource.email}} </span>
+                        <mat-icon mat-icon class="icon" aria-hidden="true">mail</mat-icon>
+                    </div>
+                    <div class="contatto-row">
+                        <span>{{dataSource.numero_telefono}} </span>
+                        <mat-icon mat-icon class="icon" aria-hidden="true">phone</mat-icon>
+                    </div>
+                </div>
+                <div class="diagnosi">
+                    <h4 class="title">Ha gi&agrave; una diagnosi?</h4>
+                    <span>{{dataSource.diagnosi}}</span>
+                </div>
             </div>
         </mat-card-content>
     </mat-card>
